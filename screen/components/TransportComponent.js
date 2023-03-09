@@ -3,10 +3,11 @@ import {View,Text,StyleSheet} from 'react-native'
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 
-function TransportComponent({ arr }){
+export default function TransportComponent({ arr }){
     return(
-        <View style={styles.rowStyle}
-         >
+        <View style={styles.rowStyle} 
+        onStartShouldSetResponder={() => alert("Trnasport component")}
+        >
         <Ionicons name="car-outline" size={30} color="black" />
         
         {
@@ -19,7 +20,7 @@ function TransportComponent({ arr }){
                 )
             })
         }
-        
+       
 
     
         <Text style={styles.timeTextStyle}>06:55 - 08:25</Text>
@@ -55,4 +56,3 @@ const styles = StyleSheet.create({
         alignSelf:'center'
     }
 })
-export default TransportComponent
